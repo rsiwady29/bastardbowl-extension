@@ -26,14 +26,15 @@ function traverse(node)
 
 function replaceText(node)
 {
-  var ocurrences = [/battle of bastards/i];
-  var textToReplace = "BastardBowl";
+  var ocurrences = [/battle of bastards/i,
+                    /battle of the bastards/i];
+  var bastardBowlText = "BastardBowl";
 
   var text = node.nodeValue;
 
   for (var index = 0; index < ocurrences.length; index++) {
     var occurence = ocurrences[index];
-    text = text.replace(occurence, "BastardBowl");
+    text = text.replace(occurence, bastardBowlText);
   }
 
   node.nodeValue = text;
